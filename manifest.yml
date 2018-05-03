@@ -10,3 +10,5 @@ applications:
   timeout: 80
   services:
     - pz-service-reg
+env:
+  SPRING_PROFILES_ACTIVE: cloud
