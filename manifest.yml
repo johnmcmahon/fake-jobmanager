@@ -1,6 +1,12 @@
 ---
 applications:
-- name: hello-spring-cloud
+- name: fake-jobmanager
   instances: 1
-  host: hello-spring-cloud-${random-word}
-  path: target/hello-spring-cloud-0.0.1.BUILD-SNAPSHOT.jar
+  host: fake-jobmanager-${random-word}
+  path: target/fake-jobmanager-0.0.1.BUILD-SNAPSHOT.jar
+  buildpack: 'https://github.com/cloudfoundry/java-buildpack.git#v3.9'
+  memory: 1024M
+  instances: 1
+  timeout: 80
+  services:
+    - pz-service-reg
