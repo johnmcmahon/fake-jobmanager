@@ -2,13 +2,13 @@
 applications:
 - name: fake-jobmanager
   instances: 1
-  host: fake-jobmanager-${random-word}
+  host: fake-jobmanager
   path: target/fake-jobmanager-0.0.1.BUILD-SNAPSHOT.jar
   buildpack: 'https://github.com/cloudfoundry/java-buildpack.git#v3.9'
   memory: 1024M
   instances: 1
   timeout: 80
   services:
-    - pz-service-reg
+    - pz-service-registry
 env:
   SPRING_PROFILES_ACTIVE: cloud
